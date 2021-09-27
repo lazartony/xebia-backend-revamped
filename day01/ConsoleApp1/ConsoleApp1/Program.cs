@@ -64,11 +64,43 @@ namespace ConsoleApp1
                 Console.WriteLine("{0}\t{1}\t{2}\t{3}\t{4}\t{5}\t{6}",studMarks[i,0], studMarks[i, 1], studMarks[i, 2], studMarks[i, 3], studMarks[i, 4],totalMarks,percentageOfMarks);
             }
         }
+        public static void ExerciseFour()
+        {
+            int n,days;
+            Console.Write("Enter the no: of employees: ");
+            n = int.Parse(Console.ReadLine());
+            int[][] employeeDetails = new int[n][];
+            for (int i = 0; i < n; i++)
+            {
+                Console.WriteLine("Employee {0}",i+1);
+                Console.Write("Enter the no: of working days: ");
+                days = int.Parse(Console.ReadLine());
+                employeeDetails[i] = new int[days];
+                for (int j = 0; j < days; j++)
+                {
+                    Console.Write("Enter the salary for day {0} : ", j+1);
+                    employeeDetails[i][j] = int.Parse(Console.ReadLine());
+                }
+            }
+
+            for (int i = 0; i < n; i++)
+            {
+                Console.Write("{0}\t", i + 1);
+                int totalSalary = 0;
+                for (int j = 0; j < employeeDetails[i].Length; j++)
+                {
+                    Console.Write("{0}\t",employeeDetails[i][j]);
+                    totalSalary += employeeDetails[i][j];
+                }
+                Console.WriteLine(": {0}",totalSalary);
+            }
+        }
         static void Main(string[] args)
         {
             //ExerciseOne();
             //ExerciseTwo();
-            ExerciseThree();
+            //ExerciseThree();
+            ExerciseFour();
             Console.ReadKey();
         }
     }
