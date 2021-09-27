@@ -95,13 +95,25 @@ namespace ConsoleApp1
                 Console.WriteLine(": {0}",totalSalary);
             }
         }
+        public static void ExerciseFive()
+        {
+            Console.WriteLine("Sample Salary Calculation for an HR: CalcSalary(7,6): {0}", CalcSalary(7, 6));
+            Console.WriteLine("Sample Salary Calculation for an Admin: CalcSalary(7,6,10): {0}", CalcSalary(8, 7, 10));
+            Console.WriteLine("Sample Salary Calculation for a Developer: CalcSalary(7,6,10,10): {0}", CalcSalary(8, 7, 10,10));
+        }
         static void Main(string[] args)
         {
             //ExerciseOne();
             //ExerciseTwo();
             //ExerciseThree();
-            ExerciseFour();
+            //ExerciseFour();
+            ExerciseFive();
             Console.ReadKey();
+        }
+
+        public static float CalcSalary(float wHour, int nWDays, int projectHandles = 1, int extras = 0)
+        {
+            return wHour * nWDays * 100 + projectHandles * 3000 + extras * 2000;
         }
     }
 }
