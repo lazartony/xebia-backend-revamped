@@ -51,14 +51,11 @@ namespace ConsoleApp1
                 Console.WriteLine("Student {0}", i + 1);
                 Console.Write("Enter the roll no: ");
                 studMarks[i, 0] = int.Parse(Console.ReadLine());
-                Console.Write("Enter the mark in sem 1: ");
-                studMarks[i, 1] = int.Parse(Console.ReadLine());
-                Console.Write("Enter the mark in sem 2: ");
-                studMarks[i, 2] = int.Parse(Console.ReadLine());
-                Console.Write("Enter the mark in sem 3: ");
-                studMarks[i, 3] = int.Parse(Console.ReadLine());
-                Console.Write("Enter the mark in sem 4: ");
-                studMarks[i, 4] = int.Parse(Console.ReadLine());
+                for (int j = 0; j < 4; j++)
+                {
+                    Console.Write("Enter the mark in sem {0}: ",j+1);
+                    studMarks[j, j+1] = int.Parse(Console.ReadLine());
+                }
             }
             for (int i = 0; i < 4; i++)
             {
