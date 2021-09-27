@@ -97,9 +97,38 @@ namespace ConsoleApp1
         }
         public static void ExerciseFive()
         {
-            Console.WriteLine("Sample Salary Calculation for an HR: CalcSalary(7,6): {0}", CalcSalary(7, 6));
-            Console.WriteLine("Sample Salary Calculation for an Admin: CalcSalary(7,6,10): {0}", CalcSalary(7, 6, 10));
-            Console.WriteLine("Sample Salary Calculation for a Developer: CalcSalary(7,6,10,10): {0}", CalcSalary(7, 6, 10, 10));
+            char ch;
+            float wHour, salary;
+            int nWDays, projectHandles, extras;
+        BeginChoice:
+            Console.Write("Enter the Employee type:\n1-HR\n2-Admin\n3-Developer\n");
+            ch = char.Parse(Console.ReadLine());
+            Console.Write("Enter the work hours: ");
+            wHour = float.Parse(Console.ReadLine());
+            Console.Write("Enter the no: of working days: ");
+            nWDays = int.Parse(Console.ReadLine());
+            switch (ch)
+            {
+                case '1':
+                    salary = CalcSalary(wHour, nWDays);
+                    break;
+                case '2':
+                    Console.Write("Enter the no: of project handles: ");
+                    projectHandles = int.Parse(Console.ReadLine());
+                    salary = CalcSalary(wHour, nWDays, projectHandles);
+                    break;
+                case '3':
+                    Console.Write("Enter the no: of project handles: ");
+                    projectHandles = int.Parse(Console.ReadLine());
+                    Console.Write("Enter the no: of extras: ");
+                    extras = int.Parse(Console.ReadLine());
+                    salary = CalcSalary(wHour, nWDays, projectHandles, extras);
+                    break;
+                default:
+                    Console.WriteLine("Invalid Choice");
+                    goto BeginChoice;
+            }
+            Console.WriteLine("Salary = {0}", salary);
         }
         static void Main(string[] args)
         {
