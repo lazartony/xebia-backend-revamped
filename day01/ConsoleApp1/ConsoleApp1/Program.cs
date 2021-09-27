@@ -53,32 +53,32 @@ namespace ConsoleApp1
                 studMarks[i, 0] = int.Parse(Console.ReadLine());
                 for (int j = 0; j < 4; j++)
                 {
-                    Console.Write("Enter the mark in sem {0}: ",j+1);
-                    studMarks[j, j+1] = int.Parse(Console.ReadLine());
+                    Console.Write("Enter the mark in sem {0}: ", j + 1);
+                    studMarks[j, j + 1] = int.Parse(Console.ReadLine());
                 }
             }
             for (int i = 0; i < 4; i++)
             {
                 int totalMarks = studMarks[i, 1] + studMarks[i, 2] + studMarks[i, 3] + studMarks[i, 4];
                 float percentageOfMarks = totalMarks / 4;
-                Console.WriteLine("{0}\t{1}\t{2}\t{3}\t{4}\t{5}\t{6}",studMarks[i,0], studMarks[i, 1], studMarks[i, 2], studMarks[i, 3], studMarks[i, 4],totalMarks,percentageOfMarks);
+                Console.WriteLine("{0}\t{1}\t{2}\t{3}\t{4}\t{5}\t{6}", studMarks[i, 0], studMarks[i, 1], studMarks[i, 2], studMarks[i, 3], studMarks[i, 4], totalMarks, percentageOfMarks);
             }
         }
         public static void ExerciseFour()
         {
-            int n,days;
+            int n, days;
             Console.Write("Enter the no: of employees: ");
             n = int.Parse(Console.ReadLine());
             int[][] employeeDetails = new int[n][];
             for (int i = 0; i < n; i++)
             {
-                Console.WriteLine("Employee {0}",i+1);
+                Console.WriteLine("Employee {0}", i + 1);
                 Console.Write("Enter the no: of working days: ");
                 days = int.Parse(Console.ReadLine());
                 employeeDetails[i] = new int[days];
                 for (int j = 0; j < days; j++)
                 {
-                    Console.Write("Enter the salary for day {0} : ", j+1);
+                    Console.Write("Enter the salary for day {0} : ", j + 1);
                     employeeDetails[i][j] = int.Parse(Console.ReadLine());
                 }
             }
@@ -89,17 +89,17 @@ namespace ConsoleApp1
                 int totalSalary = 0;
                 for (int j = 0; j < employeeDetails[i].Length; j++)
                 {
-                    Console.Write("{0}\t",employeeDetails[i][j]);
+                    Console.Write("{0}\t", employeeDetails[i][j]);
                     totalSalary += employeeDetails[i][j];
                 }
-                Console.WriteLine(": {0}",totalSalary);
+                Console.WriteLine(": {0}", totalSalary);
             }
         }
         public static void ExerciseFive()
         {
             Console.WriteLine("Sample Salary Calculation for an HR: CalcSalary(7,6): {0}", CalcSalary(7, 6));
-            Console.WriteLine("Sample Salary Calculation for an Admin: CalcSalary(7,6,10): {0}", CalcSalary(8, 7, 10));
-            Console.WriteLine("Sample Salary Calculation for a Developer: CalcSalary(7,6,10,10): {0}", CalcSalary(8, 7, 10,10));
+            Console.WriteLine("Sample Salary Calculation for an Admin: CalcSalary(7,6,10): {0}", CalcSalary(7, 6, 10));
+            Console.WriteLine("Sample Salary Calculation for a Developer: CalcSalary(7,6,10,10): {0}", CalcSalary(7, 6, 10, 10));
         }
         static void Main(string[] args)
         {
